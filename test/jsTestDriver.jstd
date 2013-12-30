@@ -1,0 +1,68 @@
+#
+# Default server
+#
+server: http://localhost:8002
+
+
+#
+# Load suite files
+#
+load:
+  # library
+  - ../lib/jquery-2.0.3.js
+  - ../lib/underscore.js
+  - ../lib/backbone.js
+  - ../lib/star-rating.min.js
+  - ../lib/n13.js
+  # mixin
+  - ../js/mixin/Interface.js
+  - ../js/mixin/Observer.js
+  - ../js/mixin/controller/*.js
+  - ../js/mixin/view/*.js
+  # base app
+  - ../js/base/App.js
+  - ../js/Application.js
+  - ../js/Config.js
+  # controller
+  - ../js/controller/base/*.js
+  - ../js/controller/player/*.js
+  # model
+  - ../js/model/player/Track.js
+  # collection
+  - ../js/collection/player/Track.js
+  # view
+  - ../js/view/*.js
+  - ../js/view/base/*.js
+  - ../js/view/player/*.js
+  # template
+  - ../js/template/*.js
+  - ../js/template/player/*.js
+
+
+#
+# Load static files
+#
+serve:
+  # css
+  - ../css/*.css
+  # mocks
+  - ../js/mocks/defaultList.json
+  - ../js/mocks/sound/*.*
+
+
+#
+# Load test files
+#
+test:
+  # test utils
+  - util/Common.js
+  # model
+  - js/model/player/Track.js
+  # collection
+  - js/collection/player/Track.js
+  # view
+  - js/view/Button.js
+  - js/view/player/ControlPanel.js
+  - js/view/player/PlaylistContainer.js
+  - js/view/player/PlaylistGrid.js
+  - js/view/player/ToggleButton.js
