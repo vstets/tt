@@ -1,10 +1,7 @@
 /**
  * Button abstraction
- *
  * Available events:
- *
  * click Fires then user clicks on button
- *
  * @author DeadbraiN
  */
 N13.define('App.view.Button', {
@@ -45,7 +42,7 @@ N13.define('App.view.Button', {
 
         me.el.on('click', function () {
             me.trigger('click', me);
-        }, this);
+        });
         me.callParent();
     }
 });

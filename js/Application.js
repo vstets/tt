@@ -21,7 +21,7 @@ N13.define('App.Application', {
      * will be ready to proceed.
      */
     run: function () {
-        //*
+        /*
         var playerCtrl = new App.controller.player.Player({
             view: {cl: 'player.Container', elPath: '.main-container'}
         });

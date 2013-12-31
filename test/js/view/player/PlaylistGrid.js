@@ -95,16 +95,16 @@ TestCase("App.view.player.PlaylistGrid", {
         this.plg.render('#viewContainer');
 
         var val = 1;
-        var listenResult = false;
-        var changeRes = function () {listenResult = true};
-        //this.plg.listen($('.playlist-grid tr[row="' + ($.isNumeric(val) ? val : this._curRow + 1) + '"] td[col="0"]'), 'click', changeRes, this);
-        $('.playlist-grid tr[row="1"] td[col="0"]').on('click', changeRes);
+        this.listenResult = false;
+        var changeRes = function () {this.listenResult = true};
+        this.plg.listen($('.playlist-grid tr[row="' + ($.isNumeric(val) ? val : this._curRow + 1) + '"] td[col="0"]'), 'click', changeRes, this);
+        //$('.playlist-grid tr[row="1"] td[col="0"]').on('click', changeRes);
 
 
-        this.plg.select(val);
-        console.log('listenResult = ' + listenResult);
+        this.plg.select(1);
+        console.log('listenResult = ' + this.listenResult);
 
-        assertTrue('ok', listenResult);
+        assertTrue('ok', this.listenResult);
 
 /*
         assertFalse(

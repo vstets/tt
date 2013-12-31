@@ -144,8 +144,9 @@ N13.define('App.view.player.PlaylistGrid', {
         // Random number to select the track that will be played next
         var randomSum;
 
-        // Check curRow - must be integer and equal or above zero
-        if (!this._isInt(curRow) || curRow < 0 || curRow === Number.POSITIVE_INFINITY || curRow === Number.NEGATIVE_INFINITY) {
+        // Check curRow - must be integer and equal or above -1
+        // (-1 - because if delete row №0 - curRow = -1 and next row will be 0)
+        if (!this._isInt(curRow) || curRow < -1 || curRow === Number.POSITIVE_INFINITY || curRow === Number.NEGATIVE_INFINITY) {
             console.error('Number of current row must be an integer and equal or above zero');
             return false;
         } else if (this.tracks === null) {
